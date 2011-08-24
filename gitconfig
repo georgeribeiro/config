@@ -1,0 +1,8 @@
+[user]
+	name = George Ribeiro
+	email = george.rib@gmail.com
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
