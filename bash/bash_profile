@@ -10,4 +10,4 @@ export LSCOLORS="gxfxcxdxbxegedabagacad"
 export PS1='\n\[\[\e[33m\]\w \[\e[32m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`
 \[\033[37m\]$\[\033[00m\] '
 
-source ~/git-completion.bash
+source ~/.git-completion.bash
