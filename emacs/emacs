@@ -1,13 +1,15 @@
-(require 'pc-select)
+(require 'pc-select) ;; selection-mode, C-x h for select all text 
 (pc-selection-mode)
 
-(add-to-list 'load-path "~/.emacs.d/zencoding/")                                                                                                                                  
-(require 'zencoding-mode)                                                                                                                                                     
+(add-to-list 'load-path "~/.emacs.d/zencoding/") ;;  html code facilite, C-j to activate
+(require 'zencoding-mode)
 (add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup mode 
 
-(add-to-list 'load-path "~/.emacs.d/magit/")
+(add-to-list 'load-path "~/.emacs.d/magit/") ;; 
 (require 'magit)
 
-(load "~/.emacs.d/haskell-mode/haskell-site-file")
+(load "~/.emacs.d/haskell-mode/haskell-site-file") ;; haskell-mode
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+ 
+(cua-mode t) ;; cua-mode C-c to copy, C-x to cut, C-v to paste
