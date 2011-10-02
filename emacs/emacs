@@ -13,3 +13,12 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
  
 (cua-mode t) ;; cua-mode C-c to copy, C-x to cut, C-v to paste
+
+(setq inferior-lisp-program "/usr/local/bin/sbcl") ;; your Lisp system 
+(add-to-list 'load-path "~/.emacs.d/slime/") ;; your SLIME directory 
+(require 'slime)
+(slime-setup)
+
+(add-to-list 'load-path "~/.emacs.d/scala/")
+(require 'scala-mode)
+(setq auto-mode-alist (cons '("\\.scala$" . scala-mode) auto-mode-alist))
