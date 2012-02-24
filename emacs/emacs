@@ -19,6 +19,36 @@
 (require 'slime)
 (slime-setup)
 
-(add-to-list 'load-path "~/.emacs.d/scala/")
+(add-to-list 'load-path "~/.emacs.d/scala/") ;; scala mode
 (require 'scala-mode)
 (setq auto-mode-alist (cons '("\\.scala$" . scala-mode) auto-mode-alist))
+
+(add-to-list 'load-path "~/.emacs.d/yasnippet/") ;; yasnippet
+(require 'yasnippet)
+(yas/global-mode 1)
+
+(add-to-list 'load-path "~/.emacs.d/auto-complete/")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/auto-complete/ac-dict")
+(ac-config-default)
+
+;;(add-to-list 'load-path "~/.emacs.d/django-mode/") ;; django mode
+;;(require 'django-html-mode)
+;;(require 'django-mode)
+;;(yas/load-directory "~/.emacs.d/django-mode/snippets")
+
+(add-to-list 'load-path "~/.emacs.d/color-theme/") ;; color-theme
+(require 'color-theme)
+(color-theme-initialize)
+(load-file "~/.emacs.d/color-theme/themes/color-theme-twilight.el")
+;;(load-file "~/.emacs.d/color-theme/themes/color-theme-mac-classic.el")
+;; (color-theme-mac-classic)
+(color-theme-twilight)
+
+(add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; show line numbers
+(global-linum-mode 1)
+(setq linum-format "%d")
+
+(add-to-list 'load-path "~/.emacs.d/js2/") ;; js2 mode
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
